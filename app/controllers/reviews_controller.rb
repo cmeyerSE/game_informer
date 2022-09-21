@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
     def index
+        @reviews = Review.all.order("created_at DESC")
     end
 
     def new
@@ -15,6 +16,25 @@ class ReviewsController < ApplicationController
             render 'new'
         end
     end
+
+    def show
+        @review = Review.find(params[:id])
+    end
+
+    def update
+        @review = Review.find(params[:id])
+
+        if @review.update(review_params)
+            redirect_to @review
+        else
+            render 'edit'
+        end
+    end
+
+    def edit
+        @review = Review.find(params[:id])
+    end
+
 
     private
 
