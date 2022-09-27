@@ -5,8 +5,6 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  resources :registrations
-
   resources :users
 
   root 'reviews#index'
