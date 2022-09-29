@@ -1,7 +1,7 @@
 <% content_for :page_title, "Welcome to Game Informer" %>
 
-<% if @user %>
-Logged in as: <%= @user.username %>
+<% if Current.user %>
+Logged in as: <%= Current.user.username %>
 
 <%= button_to "Logout", logout_path, method: :delete %>
 <% end %>
