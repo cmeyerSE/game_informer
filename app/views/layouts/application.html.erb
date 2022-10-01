@@ -17,6 +17,7 @@
       <div class="container">
         <div class="navbar-brand">
           <%= link_to 'Game Informer', root_path, class:"navbar-item" %>
+          <%= link_to "Create New Review", new_review_path, class:"navbar-item" %>
           <span class="navbar-burger" data-target="navbarMenuHeroA">
             <span></span>
             <span></span>
@@ -25,8 +26,8 @@
         </div>
         <div id="navbarMenuHeroA" class="navbar-menu">
           <div class="navbar-end">
-          <%= link_to "Create New Review", new_review_path, class:"navbar-item" %>
             <% if Current.user %>
+            <%= link_to Current.user.username, edit_password_path, class:"navbar-item" %>
             <%= link_to "Logout", logout_path, method: :delete, class:"navbar-item" %>
             <% else %>
             <%= link_to "Sign up", sign_up_path, class:"navbar-item" %>

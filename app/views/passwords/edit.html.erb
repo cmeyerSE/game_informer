@@ -1,14 +1,14 @@
-<% content_for :page_title, "Sign Up for Game Informer" %>
+<% content_for :page_title, "Change Your Password" %>
 
 <div class="section">
     <div class="container">
     <div class="columns is-centered">
     
         <div class="column is-4">
-        <%= simple_form_for @user, url: sign_up_path do |f| %>
-            <% if @users.errors.any? %>
+        <%= simple_form_for Current.user, url: edit_password_path do |f| %>
+            <% if Current.user.errors.any? %>
                 <div class="alert alert-danger">
-                <% @user.errors.full_messages.each do |m| %>
+                <% Current.user.errors.full_messages.each do |m| %>
                     <div><%= m %></div>
                 <% end %>
                 </div>
@@ -17,22 +17,12 @@
             
             <div class="field">
                 <div class="control">
-                <%= f.input :username, input_html: { class: 'input' }, wrapper: false, label_html: { class: 'label'}, placeholder: "username" %>
-                </div>
-            </div>
-            <div class="field">
-                <div class="control">
                 <%= f.input :password, input_html: { class: 'input' }, wrapper: false, label_html: { class: 'label'}, placeholder: "password" %>
                 </div>
             </div>
             <div class="field">
                 <div class="control">
                 <%= f.input :password_confirmation, input_html: { class: 'input' }, wrapper: false, label_html: { class: 'label'}, placeholder: "confirm password" %>
-                </div>
-            </div>
-            <div class="field">
-                <div class="control">
-                <%= f.input :email, input_html: { class: 'input' }, wrapper: false, label_html: { class: 'label'}, placeholder: "user@email.com" %>
                 </div>
             </div>
             <%= f.button :submit, class: "button is-success is-small" %>
