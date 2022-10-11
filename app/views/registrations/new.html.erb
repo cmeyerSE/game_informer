@@ -6,7 +6,7 @@
     
         <div class="column is-4">
         <%= simple_form_for @user, url: sign_up_path do |f| %>
-            <% if @users.errors.any? %>
+            <% if @user.errors.any? %>
                 <div class="alert alert-danger">
                 <% @user.errors.full_messages.each do |m| %>
                     <div><%= m %></div>
