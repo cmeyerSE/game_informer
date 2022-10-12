@@ -20,8 +20,11 @@
             </div>
             <div class="field">
                 <div class="control">
-                <%= form.submit "Sign In", class: "button is-success is-small" %>
+                <%= form.submit "Sign In", class: "button is-success is-inverted is-rounded is-small" %>
                 </div>
+            </div>
+            <div class="field">
+                <%= button_to 'Log in with GitHub', 'sign_in/auth/github', method: :post, class: "button is-link is-light is-rounded is-small" %>
             </div>
         <% end %>
         </div>

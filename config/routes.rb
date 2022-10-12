@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   resources :users
 
   root 'users#index'
+
+  get "sign_in/auth/github/callback", to: "sessions#create"
 end
