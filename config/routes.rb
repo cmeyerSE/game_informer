@@ -20,5 +20,5 @@ Rails.application.routes.draw do
 
   root 'users#index'
 
-  get "sign_in/auth/github/callback", to: "sessions#create"
+  get "/auth/github/callback", to: "sessions#create"
 end
