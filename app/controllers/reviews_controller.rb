@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-    # before_action :find_review, only: [:show, :update, :edit, :destroy]
+    before_action :find_review, only: [:show, :update, :edit, :destroy]
 
     def index
         @reviews = Review.all.order("created_at DESC")

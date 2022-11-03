@@ -1,4 +1,4 @@
-# <% content_for :page_title, "Game Informer" %>
+<% content_for :page_title, "Game Informer" %>
 
 <% if @user %>
     Logged in as: <%= @user.email %>
@@ -6,21 +6,21 @@
     <%= button_to "Logout", logout_path, method: :delete %>
 <% end %>
 
-# <section class="section">
-#     <div class="container">
-#         <% @reviews.each do |review| %>
-#             <div class="card">
-#                 <div class="card-content">
-#                     <div class="media">
-#                         <div class="media-content">
-#                             <p class="title is-4"><%= link_to review.title, review %></p>
-#                         </div>
-#                     </div>
-#                     <div class="content">
-#                         <%= review.content %>
-#                     </div>
-#                 </div>
-#             </div>
-#         <% end %>
-#     </div>
-# </section>
+<section class="section">
+    <div class="container">
+        <% @reviews.each do |review| %>
+            <div class="card">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="media-content">
+                            <p class="title is-4"><%= link_to review.title, review %></p>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <%= review.content %>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</section>
