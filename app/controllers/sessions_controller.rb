@@ -5,7 +5,8 @@ class SessionsController < ApplicationController
             user = User.find_or_create_by(email: auth['info']['email']) do
                 u.password = SecureRandom.hex(12)
             end
-            if user 
+            if user.id
+                session[:user_id] = user.id
                 redirect_to reviews_path
             else
                 redirect_to root_path
