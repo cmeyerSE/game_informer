@@ -1,5 +1,9 @@
 class CommentsController < ApplicationController
 
+    def index
+        @comment = Comment.recent_comments
+    end
+
     def create
         @review = Review.find(params[:review_id])
         @comment = @review.comments.create(comment_params)

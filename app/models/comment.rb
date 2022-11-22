@@ -5,4 +5,6 @@ class Comment < ApplicationRecord
     validates :description, presence: true
     validates :name, presence: true
 
+    scope :recent_comments, -> { order(created_at: :desc) }
+
 end
